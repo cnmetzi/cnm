@@ -1,0 +1,131 @@
+#import libraries
+
+import pandas as pd
+import numpy as np
+
+#read data
+
+df=pd.DataFrame(col...)
+df1=pd.read_csv('data.csv')
+df2=pd.read_excel('data2.xlsx',sheet_name='Sheet1', header=0, names=[],usecols=)
+
+#inspect data
+
+df.dtypes
+df.describe(include='all')
+df['Col Name'].value_counts()
+df['Col Name'].unique()
+df['Col Name'].nunique()
+df.shape
+
+df.head()
+df.columns
+df.index
+
+#convert date columns to dates or numeric if not already
+
+pd.to_datetime(df2['Col Name'])
+pd.to_numeric()
+
+#convert to categorical or numeric or string if not already
+
+df['Col Name'].astype('category')
+df['Col Name'].astype(str)
+
+#replacing values
+
+df['Col name'].replace([1,2,3],1,inplace=True)
+
+
+#creating new columns
+
+df['New Col Name']=
+
+
+#Drop columns
+
+df.drop('Col name',axis=1,inplace=True)
+del df['Col name']
+
+#Drop rows
+
+df.drop(-1,axis=0)
+
+#Select rows/colums (multiple pass as list)
+
+df['Col Name']
+df.loc['Row Name':'Column Name']
+df.iloc['Row Location':'Column Location']
+
+#filter by many conditions, including time range
+df[df['W']>0][['Y','X']]
+For two conditions you can use | and & with parenthesis:
+df[(df['W']>0) & (df['Y'] > 1)]
+newdf = df[(df['col1']>2) & (df['col2']==444)]
+>=
+<=
+!=
+
+# Check for missing data
+df[df.isna().any(axis=1)]
+df.isnull()
+
+#Find Duplicates
+df.['Col Name'].duplicated(keep=False)
+df[df['Col Name'].duplicated(keep=False)==True]
+df[‘key’=df1[‘Col Name’].astype(str)+’_’+df1[‘Col Name’].astype(str) #create key
+
+#Drop_duplicates
+
+df.drop_dupicates(subset=['Col name'],keep='first',inplace=True)
+
+#Drop missing rows
+
+df.dropna(axis=0,subset=['Col name'],inplace=True)
+df['Col Name'].fillna(df['Col Name'].mean(),inplace=True)
+
+#Correct wrong values
+df.replace
+
+
+#grouping
+
+name = df.groupby('Col Name')
+df[Column Name'].mean(),std,min,max,count,sum()
+describe again
+transpose
+
+#Concatenation/Joining
+
+pd.concat(df1,df2)
+pd.join #only for indexes
+df3=pd.merge(df1,df2,how='outer',on='Col name')
+
+#Sorting/Ordering
+
+df.sort_values(by=['Col Name],inplace=True)
+sorted()
+
+#Set/Reset the Index
+df.set_index('Col Name',inplace=True)
+df.reset_index()
+
+#what % met this condition
+
+#Applying Function
+df['Col Name'].apply('Name of Function')
+
+#Output to Excel
+df.to_excel('Output.xlsx',sheet_name='Sheet1')
+
+Efficiency:
+Converting string variable with only a few different values to a categorical variable will save some memory
+
+#get length
+len()
+
+#time
+pd.timestamp.today
+
+pd.datetime.today
+
